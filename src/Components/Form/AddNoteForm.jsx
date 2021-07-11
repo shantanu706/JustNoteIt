@@ -1,48 +1,53 @@
 import React, { useState } from "react";
-
 import "./AddNoteForm.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import { Button, FormControl, InputGroup } from "react-bootstrap";
 const AddNoteForm = () => {
   const [form, setForm] = useState({});
   const dispatch = useDispatch();
   const handleForm = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev,'id': 0, [name]: value }));
+    setForm((prev) => ({ ...prev, id: 0, [name]: value }));
   };
-  const Stroage = useSelector((state) => state.notex);
+  // const Stroage = useSelector((state) => state.notex);
   const handleAdd = () => {
     setForm({
-      Head:"",
-      Body:"",
+      Head: "",
+      Body: "",
     });
     dispatch({ type: "notex/addNote", payload: form });
   };
   return (
     <div>
-      <input
-        name="Head"
-        id="TitleHead"
-        type="text"
-        placeholder="Title or Head of Note"
-        onChange={handleForm}
-        value={form.Head}
-      />
+      <InputGroup id="TitleHead">
+        <FormControl
+          aria-label="Small"
+          aria-describedby="inputGroup-sizing-sm"
+          name="Head"
+          type="text"
+          placeholder="Title or Head of Note"
+          onChange={handleForm}
+          value={form.Head}
+        />
+      </InputGroup>
+      <InputGroup id="noteBody">
+        <FormControl
+          as="textarea"
+          aria-label="With textarea"
+          name="Body"
+          type="textarea"
+          placeholder="Body of Note"
+          onChange={handleForm}
+          value={form.Body}
+        />
+      </InputGroup>
       <br />
-      <textarea
-        name="Body"
-        id="noteBody"
-        type="textarea"
-        placeholder="Body of Note"
-        onChange={handleForm}
-        value={form.Body}
-      />
-      <br />
-      <button id="AddButton" onClick={handleAdd}>
+      <Button variant="primary" onClick={handleAdd}>
         Add
-      </button>
+      </Button>
       <br />
       <br />
-      <pre id="notes">{JSON.stringify(Stroage.noteBucket, null, 3)}</pre>
+      {/* <pre id="notes">{JSON.stringify(Stroage.noteBucket, null, 3)}</pre> */}
     </div>
   );
 };

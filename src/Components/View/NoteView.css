@@ -1,0 +1,16 @@
+#CardsGrid{
+    margin: 5pt;
+    /* width: auto; */
+}
+
+#CardTitle, #CardText{
+    margin: 5pt;
+}
+
+#CardTitle{
+    font-size: 2rem;
+}
+
+#CardText{
+    font-size: 1rem;
+}

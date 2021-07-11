@@ -1,7 +1,5 @@
 #TitleHead,#noteBody, #AddButton{
     margin: 5pt;
-    width: 25vw;
-    height: 3vh;
 }
 #noteBody{
     height: 15vh;
