@@ -1,5 +1,5 @@
 #CardsGrid{
-    margin: 5pt;
+    margin: 1vh;
     /* width: auto; */
 }
 
@@ -9,8 +9,12 @@
 
 #CardTitle{
     font-size: 2rem;
+    padding: 6pt;
+    color: #fff;
 }
 
 #CardText{
     font-size: 1rem;
+    padding: 6pt;
+    color: aliceblue;
 }

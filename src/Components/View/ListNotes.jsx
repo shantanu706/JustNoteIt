@@ -1,5 +1,6 @@
+import { Card, Button, Typography } from "@material-ui/core";
 import React from "react";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import "./NoteView.css";
 const NoteCard = () => {
@@ -11,16 +12,24 @@ const NoteCard = () => {
 
   return (
     <div>
-      <Row lg={2}>
+      <Row lg={2} style={{ width: "68vw" }}>
         {NoteStore.noteBucket.map((item) => {
           return (
             <Col>
               <div id="CardsGrid">
-                <Card>
-                  <Card.Title id="CardTitle">{item.Head}</Card.Title>
-                  <Card.Text id="CardText">{item.Body}</Card.Text>
+                <Card
+                  style={{
+                    overflow: "hidden",
+                    background: "#171717",
+                    borderRadius: "10pt",
+                  }}
+                >
+                  <Typography id="CardTitle">{item.Head}</Typography>
+                  <Typography id="CardText">{item.Body}</Typography>
                   <Button
-                    variant="danger"
+                    variant="contained"
+                    color="secondary"
+                    style={{ margin: "10pt", width: "10vw" }}
                     onClick={(e) => handleDelete(item.id)}
                   >
                     Delete

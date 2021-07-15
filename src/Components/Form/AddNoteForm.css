@@ -1,13 +1,41 @@
-#TitleHead,#noteBody, #AddButton{
-    margin: 5pt;
+#TitleHead,
+#noteBody,
+#AddButton {
+  margin: 5pt;
 }
-#noteBody{
-    height: 15vh;
-    resize: none;
+#noteBody {
+  height: 15vh;
+  resize: none;
 }
-#AddButton{
-    width: auto;
+#AddButton {
+  width: auto;
 }
-#notes{
-    margin: 10pt;
+#notes {
+  margin: 10pt;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 8vh;
+  right: 5vw;
+}
+
+.add-icon {
+  padding: 10pt;
+}
+
+.add-card {
+  height: 65vh;
+  width: 28vw;
+  z-index: 10;
+}
+
+.card-position {
+  position: fixed;
+  right: 10vh;
+  bottom: 9vw;
+}
+
+#NoteHeadField {
+  margin: 18pt;
 }

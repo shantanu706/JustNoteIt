@@ -1,21 +1,15 @@
-import AddNoteForm from "./Components/Form/AddNoteForm";
 import ListNotes from "./Components/View/ListNotes";
-
+import TopBar from "./TopBar";
 import "./App.css";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import AddNote from "./Components/Form/AddNote";
 function App() {
   return (
     <div>
-      <h1 id="AppName">Simple Note</h1>
+      <TopBar />
+      <AddNote />
       <Container>
-        <Row >
-          <Col md={6}>
-            <AddNoteForm />
-          </Col>
-          <Col>
-            <ListNotes />
-          </Col>
-        </Row>
+        <ListNotes />
       </Container>
     </div>
   );
