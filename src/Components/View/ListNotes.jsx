@@ -2,6 +2,7 @@ import { Card, Button, Typography } from "@material-ui/core";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import DeleteIcon from '@material-ui/icons/Delete';
 import "./NoteView.css";
 const NoteCard = () => {
   const NoteStore = useSelector((state) => state.notex);
@@ -20,7 +21,7 @@ const NoteCard = () => {
                 <Card
                   style={{
                     overflow: "hidden",
-                    background: "#171717",
+                    background: "#E0E0E0",
                     borderRadius: "10pt",
                   }}
                 >
@@ -29,10 +30,10 @@ const NoteCard = () => {
                   <Button
                     variant="contained"
                     color="secondary"
-                    style={{ margin: "10pt", width: "10vw" }}
+                    style={{ margin: "10pt"}}
                     onClick={(e) => handleDelete(item.id)}
                   >
-                    Delete
+                    <DeleteIcon />
                   </Button>
                 </Card>
               </div>

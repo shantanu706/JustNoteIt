@@ -15,6 +15,7 @@ const AddNote = () => {
     }
   };
   const [form, setForm] = useState({});
+
   const dispatch = useDispatch();
   const handleForm = (e) => {
     const { name, value } = e.target;
@@ -47,8 +48,8 @@ const AddNote = () => {
             className="add-card"
             style={{
               overflow: "hidden",
-              background: "#E8F6EF",
-              borderRadius: "10pt",
+              background: "#E0E0E0",
+              borderRadius: "6pt",
             }}
           >
             <div id="NoteHeadField">

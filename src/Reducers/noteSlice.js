@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { saveState } from "../localStorage";
 
 export const noteSlice = createSlice({
   name: "notex",
@@ -11,6 +12,7 @@ export const noteSlice = createSlice({
       action.payload.id = state.count;
       state.noteBucket.push(action.payload);
       state.count += 1;
+      saveState(state.noteBucket);
     },
     deleteNote: (state, action) => {
       state.count = 0;
@@ -20,9 +22,12 @@ export const noteSlice = createSlice({
           state.count += 1;
         }
       }
-      console.log(state.noteBucket);
       state.noteBucket.splice(action.payload, 1);
+      saveState(state.noteBucket);
     },
+    loadNotes:(state,action) => {
+      state.noteBucket = action.payload;
+    }
   },
 });
 

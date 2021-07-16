@@ -10,11 +10,13 @@
 #CardTitle{
     font-size: 2rem;
     padding: 6pt;
-    color: #fff;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
 }
 
 #CardText{
     font-size: 1rem;
     padding: 6pt;
-    color: aliceblue;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
 }

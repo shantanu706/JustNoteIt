@@ -1,6 +1,7 @@
 #AppBar {
-  height: 10vh;
+  height: 14vh;
   background-color: #2541b2;
+  margin-bottom: 6vh;
 }
 
 #AppName {
