@@ -1,0 +1,22 @@
+#CardsGrid{
+    margin: 1vh;
+    /* width: auto; */
+}
+
+#CardTitle, #CardText{
+    margin: 5pt;
+}
+
+#CardTitle{
+    font-size: 2rem;
+    padding: 6pt;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+}
+
+#CardText{
+    font-size: 1rem;
+    padding: 6pt;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+}

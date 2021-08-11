@@ -1,0 +1,67 @@
+#TitleHead,
+#noteBody,
+#AddButton {
+  margin: 5pt;
+}
+#noteBody {
+  height: 15vh;
+  resize: none;
+}
+#AddButton {
+  width: auto;
+}
+#notes {
+  margin: 10pt;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 8vh;
+  right: 5vw;
+}
+
+.add-icon {
+  padding: 10pt;
+}
+
+.add-card {
+  height: 50vh;
+  width: 28vw;
+  z-index: 10;
+}
+
+.card-position {
+  position: fixed;
+  right: 10vh;
+  bottom: 20vh;
+}
+
+#NoteHeadField {
+  margin: 18pt;
+}
+
+.add-note-head, .note-body {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border-width: 0px;
+  border-color: #cccccc;
+  background-color: #ffffff;
+  color: #000000;
+  border-style: ridge;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+  text-shadow: 0px 0px 5px rgba(66, 66, 66, 0.75);
+}
+
+
+@media only screen and (max-width: 900px) {
+  body {
+    background-color: lightblue;
+  }
+  .add-card {
+    height: 50%;
+    width: 100%;
+    z-index: 10;
+  }
+}

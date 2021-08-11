@@ -1,0 +1,13 @@
+#AppBar {
+  height: 14vh;
+  background-color: #2541b2;
+  margin-bottom: 6vh;
+}
+
+#AppName {
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  margin: auto;
+  padding: 8pt;
+}
