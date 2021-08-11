@@ -53,27 +53,23 @@ const AddNote = () => {
             }}
           >
             <div id="NoteHeadField">
-              <TextField
-                id="filled-required"
-                label="Heading"
+              <input
+                className="add-note-head"
+                placeholder="Heading"
                 value={form.Head}
                 name="Head"
                 onChange={handleForm}
-                variant="filled"
-                style={{ width: "250pt" }}
               />
             </div>
             <div id="NoteHeadField">
-              <TextField
-                id="filled-multiline-static"
-                label="Body"
-                multiline
-                rows={10}
+              <textarea 
+                className="note-body"
+                placeholder="Body"
+                multiple
+                rows="5" 
                 value={form.Body}
                 name="Body"
                 onChange={handleForm}
-                variant="filled"
-                style={{ width: "250pt" }}
               />
             </div>
             <div id="NoteHeadField">
