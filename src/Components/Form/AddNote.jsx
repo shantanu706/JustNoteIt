@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Fab, TextField, Button } from "@material-ui/core";
+import { Card, Fab, Button } from "@material-ui/core";
 import EditIcon from "@material-ui/icons/Edit";
 import CloseIcon from "@material-ui/icons/Close";
 import { useState } from "react";
@@ -29,8 +29,6 @@ const AddNote = () => {
         Body: "",
       });
       dispatch({ type: "notex/addNote", payload: form });
-    } else {
-      alert("Cannot be Empty");
     }
   };
 
@@ -62,11 +60,11 @@ const AddNote = () => {
               />
             </div>
             <div id="NoteHeadField">
-              <textarea 
+              <textarea
                 className="note-body"
                 placeholder="Body"
                 multiple
-                rows="5" 
+                rows="5"
                 value={form.Body}
                 name="Body"
                 onChange={handleForm}
