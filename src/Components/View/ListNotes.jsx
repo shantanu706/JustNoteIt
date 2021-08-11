@@ -1,8 +1,8 @@
-import { Card, Button, Typography } from "@material-ui/core";
+import { Card, Typography } from "@material-ui/core";
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteIcon from "@material-ui/icons/Delete";
 import "./NoteView.css";
 const NoteCard = () => {
   const NoteStore = useSelector((state) => state.notex);
@@ -13,7 +13,7 @@ const NoteCard = () => {
 
   return (
     <div>
-      <Row lg={2} style={{ width: "68vw" }}>
+      <Row lg={2} xs={1}>
         {NoteStore.noteBucket.map((item) => {
           return (
             <Col>
@@ -27,14 +27,22 @@ const NoteCard = () => {
                 >
                   <Typography id="CardTitle">{item.Head}</Typography>
                   <Typography id="CardText">{item.Body}</Typography>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    style={{ margin: "10pt"}}
-                    onClick={(e) => handleDelete(item.id)}
-                  >
-                    <DeleteIcon />
-                  </Button>
+                  <Row>
+                    <Col xs={2}>
+                      <Button
+                        variant="danger"
+                        onClick={(e) => handleDelete(item.id)}
+                      >
+                        <DeleteIcon fontSize="small" />
+                      </Button>
+                    </Col>
+                    <Col />
+                    <Col xs={9}>
+                      <Button variant="success">
+                        <div className="time">{item.date}</div>
+                      </Button>
+                    </Col>
+                  </Row>
                 </Card>
               </div>
             </Col>

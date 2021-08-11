@@ -19,16 +19,21 @@ const AddNote = () => {
   const dispatch = useDispatch();
   const handleForm = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, id: 0, [name]: value }));
+    setForm((prev) => ({
+      ...prev,
+      id: 0,
+      date: new Date().toDateString() + " " + new Date().toTimeString(),
+      [name]: value,
+    }));
   };
 
   const handleAdd = () => {
     if (form.Head !== "" && form.Body !== "") {
+      dispatch({ type: "notex/addNote", payload: form });
       setForm({
         Head: "",
         Body: "",
       });
-      dispatch({ type: "notex/addNote", payload: form });
     }
   };
 
