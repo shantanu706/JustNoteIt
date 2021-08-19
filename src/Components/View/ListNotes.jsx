@@ -1,8 +1,6 @@
-import { Card, Button, Typography } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import React from "react";
-import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import DeleteIcon from '@material-ui/icons/Delete';
 import "./NoteView.css";
 const NoteCard = () => {
   const NoteStore = useSelector((state) => state.notex);
@@ -13,34 +11,15 @@ const NoteCard = () => {
 
   return (
     <div>
-      <Row lg={2} style={{ width: "68vw" }}>
-        {NoteStore.noteBucket.map((item) => {
-          return (
-            <Col>
-              <div id="CardsGrid">
-                <Card
-                  style={{
-                    overflow: "hidden",
-                    background: "#E0E0E0",
-                    borderRadius: "10pt",
-                  }}
-                >
-                  <Typography id="CardTitle">{item.Head}</Typography>
-                  <Typography id="CardText">{item.Body}</Typography>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    style={{ margin: "10pt"}}
-                    onClick={(e) => handleDelete(item.id)}
-                  >
-                    <DeleteIcon />
-                  </Button>
-                </Card>
-              </div>
-            </Col>
-          );
-        })}
-      </Row>
+      {NoteStore.noteBucket.map((item) => {
+        return (
+          <div id="CardsGrid">
+            <div className="CardTitle">{item.Head}</div>
+            <div className="CardText">{item.Body}</div>
+            <Button onClick={() => handleDelete(item.id)}>🗑️</Button>
+          </div>
+        );
+      })}
     </div>
   );
 };
